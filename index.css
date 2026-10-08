@@ -1,0 +1,908 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --primaire:     #7ca85a;
+    --prmaire-dark: #7ca85a;
+    --secondaire:   #555;
+    --texte:        #1a1a2e;
+    --texte-clair:  white;
+    --text-grisé:   #555;
+    --fond-grids:   white;
+    --btn-sbt:      orange;
+    --pied:         rgb(40, 35, 35);
+    --bg:           white;
+    --rayon:          10px;
+    --ombre:          0 4px 20px rgba(0,0,0,0.08);
+    --font:         'Segoe UI', system-ui, sans-serif;
+}
+
+html{
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+/* ---------NAVIGATION---------- */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg);
+    padding: 0 20px;
+    height: 70px;
+    box-shadow: var(--ombre);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.texte-logo{
+    color: var(--primaire);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.navbar-link{
+    display: flex;
+    gap: 32px;
+}
+
+.navbar-link a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--texte);
+    transition: color transform 0.2s;
+}
+
+.navbar-link a:hover {
+    color: var(--primaire);
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.navbar-link a:active{
+    border: solid var(--primaire);
+    background-color: var(--primaire);
+    color: var(--texte-clair);
+    transform: scale(1.05);
+    border-radius: var(--rayon);
+    padding: 0 10px;
+}
+
+/* --------SECTION HERO --------- */
+.heros {
+  background-image: url('./jus.jpeg');
+  background-size: cover;      /* Ajuste l'image pour couvrir toute la section */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat;/* Évite que l'image ne se répète */
+  min-height: 80vh;            /* Donne une hauteur suffisante à la section (ex: 80% de l'écran) */
+  
+  /* Optionnel : pour centrer verticalement et horizontalement le texte et le bouton */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--texte-clair);
+}
+
+h1{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 3.5rem;
+}
+
+.cta{
+    text-decoration: none;
+    border: solid var(--fond-grids);
+    background: var(--btn-sbt);
+    padding-bottom: 5px;
+    padding-top: 5PX;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+    color: var(--texte-clair);
+    font-weight: bold;
+    border-radius: var(--rayon);
+    transition: transform 0.3s;
+}
+
+.cta:hover{
+    border: solid var(--btn-sbt);
+    transform: scale(1.05);
+}
+.cta:active{
+    border: solid var(--primaire);
+    background-color: var(--primaire);
+    color: var(--texte-clair);
+    transform: scale(1.05);
+    border-radius: var(--rayon);
+    padding: 0 10px;
+}
+
+
+
+/* ---------SECTION MENU -------- */
+
+/* On sélectionne la section qui possède la classe "nos-specialité" */
+.nos-specialité {
+
+    /* Ajoute 50px d'espace en haut et en bas,
+       et 20px d'espace à gauche et à droite */
+    padding: 50px 20px;
+
+    /* Définit la couleur de fond de la section en blanc */
+    background-color: var(--bg);
+}
+
+/* TITRE */
+/* On sélectionne le h2 qui se trouve dans .nos-specialité */
+.nos-specialité h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--texte);
+    margin-bottom: 30px;
+}
+
+
+
+/* GRILLE DES CARTES */
+
+/* On sélectionne le conteneur qui contient toutes les cartes */
+.cards-grids {
+
+    /* Transforme le conteneur en grille CSS */
+    display: grid;
+
+    /* Crée automatiquement autant de colonnes que possible.
+       Chaque colonne doit faire au minimum 220px
+       et peut prendre une partie de l'espace disponible */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+    /* Ajoute 20px d'espace entre les cartes */
+    gap: 20px;
+
+    /* La grille ne pourra pas dépasser 1100px de largeur */
+    max-width: 1100px;
+
+    /* Centre la grille horizontalement */
+    margin: 0 auto;
+}
+
+
+/* CARTE */
+
+/* On sélectionne toutes les cartes ayant la classe "card" */
+.card {
+
+    /* Définit la couleur de fond de la carte en blanc */
+    background-color: var(--bg);
+
+    /* Ajoute 16px d'espace à l'intérieur de la carte,
+       entre le contenu et les bords */
+    padding: 16px;
+
+    /* Arrondit les coins de la carte de 10px */
+    border-radius: 10px;
+
+    /* Ajoute une ombre légère autour de la carte */
+    box-shadow: var(--ombre);
+
+    /* Définit une hauteur minimale de 170px */
+    min-height: 170px;
+
+    /* Transforme la carte en conteneur Flexbox */
+    display: flex;
+
+    /* Place les éléments de la carte verticalement */
+    flex-direction: column;
+}
+
+
+/* BADGES */
+
+/* Sélectionne le conteneur qui contient les badges */
+.card-badges {
+
+    /* Place les badges sur une même ligne */
+    display: flex;
+
+    /* Ajoute 5px d'espace entre les badges */
+    gap: 5px;
+
+    /* Ajoute 8px d'espace sous les badges */
+    margin-bottom: 8px;
+}
+
+
+/* Sélectionne tous les éléments ayant la classe "badge" */
+.badge {
+
+    /* Définit la couleur de fond du badge */
+    background-color: var(--primaire);
+
+    /* Définit la couleur du texte en blanc */
+    color: var(--texte-clair);
+
+    /* Définit la taille du texte à 10px */
+    font-size: 10px;
+
+    /* Rend le texte légèrement plus épais */
+    font-weight: 600;
+
+    /* 
+       3px = espace en haut et en bas
+       7px = espace à gauche et à droite
+    */
+    padding: 3px 7px;
+
+    /* Arrondit les coins du badge */
+    border-radius: var(--rayon);
+}
+
+
+/* TITRE DE LA CARTE */
+
+/* Sélectionne les h3 qui se trouvent dans les cartes */
+.card h3 {
+
+    /* Définit la taille du titre à 17px */
+    font-size: 17px;
+
+    /* Définit la couleur du titre */
+    color: var(--texte);
+
+    /* 
+       0 = marge en haut
+       0 = marge à droite
+       8px = marge en bas
+       0 = marge à gauche
+    */
+    margin: 0 0 8px 0;
+}
+
+
+/* DESCRIPTION */
+
+/* Sélectionne les éléments qui ont la classe "description" */
+.description {
+
+    /* Définit la taille du texte à 12px */
+    font-size: 12px;
+
+    /* Définit la hauteur entre les lignes.
+       1.4 signifie 1,4 fois la taille du texte */
+    line-height: 1.4;
+
+    /* Définit la couleur de la description */
+    color: var(--text-grisé);
+
+    /* Supprime les marges par défaut du paragraphe */
+    margin: 0;
+}
+
+
+/* BAS DE LA CARTE */
+
+/* Sélectionne le conteneur qui contient le badge et le prix */
+.card-footer {
+
+    /* 
+       "auto" pousse le footer vers le bas de la carte.
+       C'est possible grâce au display:flex de .card
+    */
+    margin-top: auto;
+
+    /* Transforme le footer en conteneur Flexbox */
+    display: flex;
+
+    /* Centre verticalement le badge et le prix */
+    align-items: center;
+
+    /* Place un élément à gauche et l'autre à droite */
+    justify-content: space-between;
+}
+
+
+/* BADGE DU BAS */
+
+/* Sélectionne uniquement les badges qui se trouvent
+   dans .card-footer */
+.card-footer .badge {
+
+    /* Change la couleur de fond du badge */
+    background-color: var(--bg);
+
+    /* Change la couleur du texte du badge */
+    color: #6b9348;
+}
+
+
+/* PRIX */
+
+/* Sélectionne l'élément qui possède la classe "price" */
+.price {
+
+    /* Définit la taille du prix à 16px */
+    font-size: 16px;
+
+    /* Rend le prix assez épais / gras */
+    font-weight: 700;
+
+    /* Définit la couleur du prix */
+    color: var(--texte);
+}
+
+
+/* SECTION  A PROPOS( POURQUOI NOUS CHOISIR) */
+.le-choix {
+    padding: 50px 20px; /* Espace en haut, en bas et sur les côtés */
+    background-color: #ffffff; /* Fond blanc */
+}
+
+/* TITRE DE LA SECTION */
+.le-choix h2 {
+    text-align: center; /* Centre le titre horizontalement */
+    font-size: 28px; /* Taille du titre */
+    color: var(--texte); /* Couleur du texte */
+    margin-bottom: 40px; /* Espace sous le titre */
+}
+
+/* CONTENEUR PRINCIPAL */
+.le-choix .container {
+    display: flex; /* Place les deux blocs côte à côte */
+    align-items: center; /* Centre verticalement les deux blocs */
+    justify-content: space-between; /* Répartit l'espace entre les blocs */
+    gap: 40px; /* Espace entre l'image et les éléments */
+    max-width: 1100px; /* Limite la largeur totale */
+    margin: 0 auto; /* Centre le conteneur dans la page */
+}
+
+/* PARTIE GAUCHE : IMAGE */
+.container-left {
+    flex: 1; /* Permet à l'image d'occuper une partie de l'espace */
+}
+
+/* IMAGE DU SALON */
+.container-left img {
+    width: 100%; /* L'image occupe toute la largeur disponible */
+    height: 350px; /* Hauteur de l'image */
+    object-fit: cover; /* Évite de déformer l'image */
+    border-radius: 15px; /* Arrondit les coins de l'image */
+    display: block; /* Supprime les petits espaces sous l'image */
+}
+
+/* PARTIE DROITE : LES TROIS ÉLÉMENTS */
+.container-right {
+    flex: 1; /* Occupe l'autre partie de l'espace */
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Place les éléments les uns sous les autres */
+    gap: 25px; /* Espace entre les trois éléments */
+}
+
+/* CHAQUE ÉLÉMENT */
+.element {
+    display: flex; /* Place l'icône à côté du texte */
+    align-items: center; /* Centre l'icône par rapport au texte */
+    gap: 15px; /* Espace entre l'icône et le texte */
+}
+
+/* CONTENEUR DE L'ICÔNE */
+.icon {
+    display: flex; /* Active Flexbox */
+    align-items: center; /* Centre l'icône verticalement */
+    justify-content: center; /* Centre l'icône horizontalement */
+}
+
+/* IMAGE DE L'ICÔNE */
+.icon img {
+    width: 70px; /* Largeur de l'icône */
+    height: 70px; /* Hauteur de l'icône */
+    object-fit: contain; /* Conserve les proportions de l'icône */
+}
+
+/* CONTENU TEXTUEL */
+.contenu {
+    flex: 1; /* Utilise l'espace restant */
+}
+
+/* TITRES DES ÉLÉMENTS */
+.contenu h3 {
+    font-size: 18px; /* Taille du titre */
+    color: #303030; /* Couleur du titre */
+    margin: 0 0 5px; /* Supprime les marges inutiles et ajoute 5px en bas */
+}
+
+/* DESCRIPTIONS */
+.contenu p {
+    font-size: 13px; /* Taille du texte descriptif */
+    color: #666666; /* Couleur grise */
+    line-height: 1.5; /* Espace entre les lignes */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+
+ /*   SECTION RÉSERVATION */
+
+.reserve {
+    padding: 50px 20px; /* Espace autour de toute la section */
+    background-color: #f4f6f9; /* Couleur de fond */
+}
+
+
+/* TITRE */
+
+.reserve h2 {
+    text-align: center; /* Centre le titre */
+    font-size: 28px; /* Taille du titre */
+    color: #1a1a2e; /* Couleur du titre */
+    margin-bottom: 25px; /* Espace entre le titre et le formulaire */
+}
+
+
+/* CONTENEUR DU FORMULAIRE */
+
+.formulation {
+    max-width: 600px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centre le formulaire */
+}
+
+
+/* FORMULAIRE */
+
+.formulation form {
+    width: 100%; /* Le formulaire prend toute la largeur disponible */
+}
+
+
+/* CONTENEUR DES CHAMPS */
+
+.form-group {
+    display: grid; /* Active CSS Grid */
+    grid-template-columns: 1fr 1fr; /* Deux colonnes de même largeur */
+    gap: 15px 20px; /* 15px entre les lignes et 20px entre les colonnes */
+}
+
+
+/* LABEL */
+
+.form-group label {
+    display: flex; /* Permet d'organiser le texte et l'input */
+    flex-direction: column; /* Place l'input sous le texte */
+    gap: 5px; /* Petit espace entre le label et l'input */
+    font-size: 12px; /* Taille du texte du label */
+    font-weight: 600; /* Rend le label légèrement gras */
+    color: #1a1a2e; /* Couleur du label */
+}
+
+
+/* CHAMPS INPUT */
+
+.form-group input {
+    width: 100%; /* L'input prend toute la largeur disponible */
+    height: 35px; /* Hauteur du champ */
+    padding: 8px 10px; /* Espace intérieur */
+    border: 1px solid #bfc5c9; /* Bordure grise */
+    border-radius: 6px; /* Coins légèrement arrondis */
+    background-color: white; /* Fond blanc */
+    font-size: 12px; /* Taille du texte */
+    box-sizing: border-box; /* Empêche l'input de dépasser */
+    outline: none; /* Supprime le contour bleu par défaut */
+}
+
+
+/* CHAMP QUAND ON CLIQUE DESSUS */
+
+.form-group input:focus {
+    border-color: var(--primaire ); /* Change la couleur de la bordure */
+}
+
+
+/* PLACEHOLDER */
+
+.form-group input::placeholder {
+    color: #777; /* Couleur du texte indicatif */
+}
+
+
+/* BOUTON */
+
+.form-group button {
+    grid-column: 1 / 3; /* Le bouton prend les deux colonnes */
+    justify-self: center; /* Centre le bouton */
+    
+    padding: 10px 25px; /* Espace intérieur du bouton */
+    border: none; /* Supprime la bordure */
+    border-radius: 6px; /* Arrondit les coins */
+    
+    background-color: #f2a33a; /* Couleur orange */
+    color: white; /* Texte blanc */
+    
+    font-size: 11px; /* Taille du texte */
+    font-weight: 600; /* Texte légèrement gras */
+    
+    cursor: pointer; /* Transforme le curseur en main */
+    
+    transition: transform 0.2s, background-color 0.2s; /* Animation */
+}
+
+
+/* EFFET AU SURVOL */
+
+.form-group button:hover {
+    transform: scale(1.05); /* Agrandit légèrement le bouton */
+    background-color: #e89122; /* Change légèrement la couleur */
+}
+
+/* le footer */
+/* ==========================================================================
+   1. STYLES GÉNÉRAUX DU FOOTER
+   ========================================================================== */
+
+footer {
+    /* Couleur de fond sombre pour détacher le pied de page du reste de la page */
+    background-color: #1e212b; 
+    
+    /* Couleur du texte principal en blanc/gris très clair */
+    color: #f8f9fa; 
+    
+    /* Marge interne : 50px en haut, 20px à droite, 30px en bas, 20px à gauche */
+    padding: 50px 20px 30px 20px; 
+    
+    /* Police d'écriture simple et lisible */
+    font-family: var(--font) 
+}
+
+
+/* ==========================================================================
+   2. CONTENEUR FLEXBOX (.Pied)
+   ========================================================================== */
+
+.Pied {
+    /* Limite la largeur maximale du contenu pour éviter qu'il ne s'étale sur les grands écrans */
+    max-width: 1200px; 
+    
+    /* Centre le conteneur horizontalement sur la page */
+    margin: 0 auto; 
+    
+    /* Active le mode Flexbox pour aligner les 4 blocs côte à côte */
+    display: flex; 
+    
+    /* Distribue l'espace disponible de manière égale entre les 4 colonnes */
+    justify-content: space-between; 
+    
+    /* Aligne tous les blocs vers le haut */
+    align-items: flex-start; 
+    
+    /* Permet aux blocs de passer à la ligne si l'écran devient trop petit */
+    flex-wrap: wrap; 
+    
+    /* Espace de 30px entre chaque bloc */
+    gap: 30px; 
+}
+
+
+/* ==========================================================================
+   3. STRUCTURE DES BLOCS ENFANTS
+   ========================================================================== */
+
+/* Applique ces règles aux 4 divs : .horaire, .adresse, .reseaux et .mention */
+.horaire, .adresse, .reseaux, .mention {
+    /* Permet à chaque colonne de grandir équitablement (partage équitable de l'espace) */
+    flex: 1; 
+    
+    /* Impose une largeur minimale : si l'écran fait moins de 220px, le bloc passe en dessous */
+    min-width: 220px; 
+}
+
+
+/* ==========================================================================
+   4. TITRES (h3)
+   ========================================================================== */
+
+footer h3 {
+    /* Couleur verte pour mettre en valeur les titres des sections */
+    color: var(--primaire); 
+    
+    /* Taille de police (environ 19px) */
+    font-size: 1.2rem; 
+    
+    /* Espace de 15px sous le titre avant le contenu */
+    margin-bottom: 15px; 
+    
+    /* Permet de positionner le petit trait vert (::after) par rapport au titre */
+    position: relative; 
+}
+
+/* Création d'une petite ligne décorative sous chaque titre */
+footer h3::after {
+    content: '';                /* Élément visuel vide obligatoire pour qu'il s'affiche */
+    display: block;             /* Se comporte comme un bloc pour se placer sous le texte */
+    width: 30px;                /* Longueur du trait : 30px */
+    height: 2px;                /* Épaisseur du trait : 2px */
+    background-color: #4caf50;  /* Couleur verte identique au titre */
+    margin-top: 5px;            /* Espacement entre le texte du titre et le trait */
+}
+
+
+/* ==========================================================================
+   5. PARAGRAPHES, LISTES ET LIENS
+   ========================================================================== */
+
+/* Style pour les paragraphes (<p>) et les éléments de liste (<li>) */
+footer p, footer li {
+    font-size: 0.95rem;   /* Taille de texte légèrement réduite */
+    line-height: 1.6;     /* Hauteur de ligne pour aérer la lecture du texte */
+    color: var(--texte-clair);       /* Gris clair pour un meilleur confort visuel que le blanc pur */
+}
+
+/* Suppression des puces par défaut de la liste <ul> dans les mentions légales */
+footer ul {
+    list-style: none; /* Enlève les points/puces noires */
+    padding: 0;        /* Enlève le retrait à gauche par défaut */
+    margin: 0;         /* Enlève les marges extérieures par défaut */
+}
+
+/* Espacement sous chaque élément de la liste des mentions légales */
+footer ul li {
+    margin-bottom: 8px;
+}
+
+/* Style des liens hypertexte (<a>) */
+footer a {
+    color: var(--texte-clair);          /* Texte du lien en blanc */
+    text-decoration: none;   /* Supprime le soulignement par défaut des liens */
+    transition: color 0.3s ease; /* Animation douce de 0.3s lors du survol */
+    transition: transform 0.3s;
+}
+
+/* Changement de couleur au survol du curseur sur les liens */
+footer a:hover {
+    color: #4caf50; /* Devient vert quand la souris passe dessus */
+    transform: scale(1.1);
+}
+
+
+/* ==========================================================================
+   6. SECTION RÉSEAUX SOCIAUX
+   ========================================================================== */
+
+/* Alignement vertical des liens des réseaux sociaux */
+.reseaux-imgage {
+    display: flex;
+    flex-direction: column; /* Empile les liens de haut en bas */
+    gap: 10px;              /* Espace de 10px entre chaque lien social */
+}
+
+/* Style de chaque lien social (Texte + Image côte à côte) */
+.reseaux-imgage a {
+    display: inline-flex;  /* Flexbox en ligne pour aligner le texte et l'icône sur la même ligne */
+    align-items: center;   /* Centre verticalement le texte et l'image */
+    gap: 10px;             /* Espace de 10px entre le nom du réseau et son logo */
+    width: fit-content;    /* La zone cliquable s'adapte à la taille exacte du contenu */
+}
+
+/* Dimensionnement des icônes d'images (.png) */
+.reseaux-imgage img {
+    width: 24px;           /* Largeur fixe de 24px */
+    height: 24px;          /* Hauteur fixe de 24px */
+    object-fit: contain;  /* Maintient les proportions des images sans les déformer */
+}
+
+
+/* ==========================================================================
+   7. ADAPTABILITÉ MOBILE (RESPONSIVE DESIGN)
+   ========================================================================== */
+
+/* S'applique uniquement sur les écrans d'une largeur maximale de 768px (smartphones/tablettes) */
+@media (max-width: 768px) {
+
+    .Pied {
+        flex-direction: column; /* Bascule les 4 colonnes en 1 seule colonne verticale */
+        text-align: center;     /* Centre l'ensemble des textes */
+    }
+
+    /* Centre la petite ligne sous le titre lorsque le texte est centré */
+    footer h3::after {
+        margin: 5px auto 0 auto; 
+    }
+
+    /* Centre les liens sociaux au milieu de l'écran sur mobile */
+    .reseaux-imgage {
+        align-items: center; 
+    }
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVE DESIGN COMPLET AVEC COMMENTAIRES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. TABLETTES ET ÉCRANS MOYENS (Largeur d'écran jusqu'à 992px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 992px) {
+    
+    /* SECTION HERO */
+    h1 {
+        font-size: 2.5rem; /* Réduit la taille du grand titre pour les tablettes */
+        padding: 0 15px;   /* Ajoute une marge interne sur les côtés pour éviter que le texte ne touche les bords */
+    }
+
+    /* SECTION À PROPOS (.le-choix) */
+    .le-choix .container {
+        flex-direction: column; /* Aligne l'image et le texte verticalement (l'un sous l'autre) */
+        gap: 30px;              /* Laisse un espace de 30px entre l'image et la partie texte */
+    }
+
+    .container-left, .container-right {
+        width: 100%; /* Force les deux blocs (image et texte) à prendre toute la largeur disponible */
+    }
+
+    .container-left img {
+        height: 280px; /* Réduit légèrement la hauteur de l'image principale */
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   B. SMARTPHONES ET PETITS ÉCRANS (Largeur d'écran jusqu'à 600px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+
+    /* --- 1. NAVIGATION & EN-TÊTE --- */
+    .navbar {
+        flex-direction: column; /* Empile le logo et les liens de navigation verticalement */
+        height: auto;           /* Supprime la hauteur fixe de 70px pour s'adapter au contenu */
+        padding: 15px 20px;     /* Redéfinit un espace interne équilibré en haut et en bas */
+        gap: 12px;              /* Ajoute un espace de 12px entre le logo et les liens */
+    }
+
+    .texte-logo {
+        font-size: 1.4rem; /* Ajuste légèrement la taille du titre/logo sur mobile */
+    }
+
+    .navbar-link {
+        gap: 15px;              /* Réduit l'espace entre chaque lien de navigation */
+        flex-wrap: wrap;        /* Permet aux liens de passer à la ligne suivante si besoin */
+        justify-content: center;/* Centre tous les liens horizontalement */
+    }
+
+    .navbar-link a {
+        font-size: 0.95rem; /* Adapte la taille du texte des liens pour smartphone */
+    }
+
+
+    /* --- 2. SECTION HERO --- */
+    .heros {
+        min-height: 60vh;   /* Réduit la hauteur minimale de la bannière sur petit écran */
+        padding: 40px 15px; /* Ajoute un rembourrage interne pour aérer le contenu */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Réduit le titre principal pour qu'il tienne sur mobile */
+        line-height: 1.2;  /* Rapproche les lignes du titre pour un meilleur rendu visuel */
+    }
+
+    .cta {
+        padding: 10px 24px; /* Ajuste les dimensions du bouton d'appel à l'action */
+        font-size: 0.95rem; /* Rend la police du bouton bien lisible sur téléphone */
+    }
+
+
+    /* --- 3. SECTION MENU & SPÉCIALITÉS --- */
+    .nos-specialité {
+        padding: 35px 15px; /* Réduit les espaces en haut et en bas de la section */
+    }
+
+    .nos-specialité h2 {
+        font-size: 1.6rem;  /* Harmonise la taille des titres de section sur mobile */
+        margin-bottom: 20px;/* Réduit la marge sous le titre de section */
+    }
+
+    .cards-grids {
+        grid-template-columns: 1fr; /* Bascule la grille sur 1 seule colonne (1 carte par ligne) */
+        gap: 15px;                  /* Espace de 15px entre chaque carte de menu */
+    }
+
+
+    /* --- 4. SECTION À PROPOS (.le-choix) --- */
+    .le-choix {
+        padding: 35px 15px; /* Ajuste le rembourrage global de la section */
+    }
+
+    .le-choix h2 {
+        font-size: 1.6rem;   /* Taille uniforme avec les autres titres de section */
+        margin-bottom: 25px; /* Marge inférieure sous le titre */
+    }
+
+    .container-left img {
+        height: 220px; /* Diminue la hauteur de l'image pour gagner de la place */
+    }
+
+    .element {
+        gap: 12px; /* Rapproche légèrement l'icône du bloc de texte */
+    }
+
+    .icon img {
+        width: 50px;  /* Redimensionne l'icône en largeur pour smartphone */
+        height: 50px; /* Redimensionne l'icône en hauteur pour smartphone */
+    }
+
+    .contenu h3 {
+        font-size: 16px; /* Taille de sous-titre adaptée au texte mobile */
+    }
+
+
+    /* --- 5. FORMULAIRE DE RÉSERVATION (.reserve) --- */
+    .reserve {
+        padding: 35px 15px; /* Espacement interne adapté pour petit écran */
+    }
+
+    .reserve h2 {
+        font-size: 1.6rem; /* Alignement de la taille du titre de réservation */
+    }
+
+    .form-group {
+        grid-template-columns: 1fr; /* Fait passer les champs de 2 colonnes à 1 seule colonne */
+        gap: 15px;                  /* Espacement vertical de 15px entre chaque champ */
+    }
+
+    .form-group label {
+        width: 100%;     /* Le label occupe toute la largeur de l'écran */
+        font-size: 13px; /* Taille de police lisible pour les intitulés */
+    }
+
+    .form-group input {
+        width: 100%;    /* L'input s'étire sur toute la largeur de sa ligne */
+        height: 42px;   /* Hauteur plus grande pour faciliter le clic avec le pouce */
+        font-size: 14px;/* Évite le zoom automatique du navigateur sur iOS lors de la saisie */
+    }
+
+    .form-group button {
+        grid-column: 1; /* Replace le bouton dans l'unique colonne restante */
+        width: 100%;    /* Étire le bouton d'envoi sur 100% de la largeur */
+        padding: 12px 20px; /* Augmente la zone tactile du bouton */
+        font-size: 14px;/* Agrandit le texte du bouton pour plus de visibilité */
+        margin-top: 5px;/* Ajoute une petite marge au-dessus du bouton */
+    }
+
+
+    /* --- 6. PIED DE PAGE (FOOTER) --- */
+    footer {
+        padding: 35px 15px 20px 15px; /* Ajuste le rembourrage général du pied de page sur mobile */
+    }
+
+    .Pied {
+        flex-direction: column; /* Empile les 4 colonnes du footer verticalement */
+        text-align: center;     /* Centre tout le texte du footer pour un rendu propre */
+        gap: 25px;              /* Définit un espace de 25px entre chaque bloc du footer */
+    }
+
+    .horaire, .adresse, .reseaux, .mention {
+        width: 100%;     /* Chaque bloc prend l'intégralité de la largeur de l'écran */
+        min-width: 100%; /* Empêche les contraintes de largeur minimale précédentes */
+    }
+
+    footer h3::after {
+        margin: 5px auto 0 auto; /* Recentre le petit trait vert sous chaque titre du footer */
+    }
+
+    .reseaux-imgage {
+        align-items: center; /* Centre les liens des réseaux sociaux au milieu de l'écran */
+    }
+
+    .reseaux-imgage a {
+        justify-content: center; /* Aligne l'icône et le texte du réseau au centre de leur conteneur */
+    }
+}
+
+

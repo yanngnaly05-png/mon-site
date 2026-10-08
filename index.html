@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="shortcut icon" href="./icon21.png" />
+    <title>EMMA-COCKTAIL</title>
+  </head>
+  <body>
+    <!-- ── NAVIGATION ───────────────────────── -->
+    <header class="navbar">
+      <div class="navbar-logo">
+        <span class="texte-logo">EMMA-COCKTAIL</span>
+      </div>
+      <div class="navbar-link">
+        <a href="#accueil">ACCUEIL</a>
+        <a href="#menu">MENU</a>
+        <a href="#a-propos">A PROPOS</a>
+        <a href="#reservation">RESERVATION</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ── SECTION HÉRO ─────────────────────── -->
+      <section class="heros" id="accueil">
+        <h1>Des ingrédients frais & locaux chaque jour</h1>
+        <a href="#menu" class="cta">Découvrir le menu</a>
+      </section>
+
+      <!-- ── SECTION MENU ──────────────────── -->
+      <section class="nos-specialité" id="menu">
+        <h2>Nos Spécialités</h2>
+
+        <div class="cards-grids">
+          <!-- Carte 1 -->
+          <article class="card">
+            <div class="card-badges">
+              <span class="badge">BIO</span>
+            </div>
+
+            <h3>Chaupe de marnot</h3>
+
+            <p class="description">
+              Description courte du plat ou de la boisson avec ingrédients.
+            </p>
+
+            <div class="card-footer">
+              <span class="badge">VEGAN</span>
+              <span class="price">3,50 €</span>
+            </div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="card">
+            <div class="card-badges">
+              <span class="badge">BIO</span>
+              <span class="badge">VEGAN</span>
+            </div>
+
+            <h3>Boufoit</h3>
+
+            <p class="description">
+              Description courte du plat ou de la boisson avec ingrédients.
+            </p>
+
+            <div class="card-footer">
+              <span class="badge">BIO</span>
+              <span class="price">7,50 €</span>
+            </div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="card">
+            <div class="card-badges">
+              <span class="badge">BIO</span>
+              <span class="badge">VEGAN</span>
+            </div>
+
+            <h3>Veslagine</h3>
+
+            <p class="description">
+              Description courte du plat ou de la boisson avec ingrédients.
+            </p>
+
+            <div class="card-footer">
+              <span class="price">3,50 €</span>
+            </div>
+          </article>
+
+          <!-- Carte 4 -->
+          <article class="card">
+            <div class="card-badges">
+              <span class="badge">VEGAN</span>
+            </div>
+
+            <h3>Bolleons de Banza</h3>
+
+            <p class="description">
+              Description courte du plat ou de la boisson avec ingrédients.
+            </p>
+
+            <div class="card-footer">
+              <span class="price">2,50 €</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── SECTION A PROPOS ───────────────── -->
+      <section class="le-choix" id="a-propos">
+        <h2>Pourquoi Nous Choisir</h2>
+
+        <div class="container">
+          <div class="container-left">
+            <a href="./cocktail.jpg">
+              <img src="./cocktail.jpg" alt="salon" />
+            </a>
+          </div>
+
+          <div class="container-right">
+            <!-- Élément 1 -->
+            <div class="element">
+              <div class="icon">
+                <!-- Exemple avec icône SVG ou image -->
+                <img src="./bio.jpeg" alt="icone bio" />
+              </div>
+              <div class="contenu">
+                <h3>100% Bio</h3>
+                <p>
+                  Des ingrédients frais et locaux pour une cuisine saine chaque
+                  jour.
+                </p>
+              </div>
+            </div>
+
+            <!-- Élément 2 -->
+            <div class="element">
+              <div class="icon">
+                <img src="./zero.jpeg" alt="icone zero" />
+              </div>
+              <div class="contenu">
+                <h3>Zéro Déchet</h3>
+                <p>
+                  Nous nous engageons à réduire au maximum nos déchets et
+                  emballages.
+                </p>
+              </div>
+            </div>
+
+            <!-- Élément 3 -->
+            <div class="element">
+              <div class="icon">
+                <img src="./velo.jpeg" alt="icone livraison" />
+              </div>
+              <div class="contenu">
+                <h3>Livraison Éco-responsable</h3>
+                <p>
+                  Livraison rapide et neutre en carbone directement chez vous.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION RESERVATION ───────────────── -->
+      <section class="reserve" id="reservation">
+        <h2>Réservation</h2>
+        <div class="formulation">
+          <form action="#">
+            <div class="form-group">
+              <label for="name"
+                >Nom & Prénom
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Nom & prénom"
+                  required
+                />
+              </label>
+
+              <label for="Date"
+                >Date
+                <input type="date" id="date" required />
+              </label>
+
+              <label for="heure"
+                >Heure
+                <input type="time" id="heure" required />
+              </label>
+
+              <label for="nombre"
+                >Nombre de Personnes
+                <input type="number" id="nombre" value="00" required />
+              </label>
+
+              <button type="submit" id="btn">Réserver maintenant</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ── FOOTER ────────────────────────────── -->
+    <footer>
+      <div class="Pied">
+        <div class="horaire">
+          <h3>Horaire</h3>
+          <p>Lundi – Samedi : 10h00 – 22h00</p>
+          <p>Dimanche : 12h00 – 20h00</p>
+        </div>
+        <div class="adresse">
+          <h3>Adresse</h3>
+          <p>Yopougon, Abidjan, Côted'Ivoire</p>
+        </div>
+        <div class="reseaux">
+          <div class="reseaux-text">
+            <h3>Suivez-nous</h3>
+          </div>
+          <div class="reseaux-imgage">
+            <a href="https://www.whatsapp.com/?lang=fr"
+              >Whats'app
+              <img src="./wha.png" alt="whatsapp" />
+            </a>
+            <a href="https://www.facebook.com/?locale=fr_FR"
+              >Facebook
+              <img src="./face.png" alt="facebook" />
+            </a>
+            <a href="https://www.instagram.com/?hl=fr"
+              >Instagram
+              <img src="./insta.png" alt="instagram" />
+            </a>
+            <a href="https://www.tiktok.com/fr/"
+              >Tiktok
+              <img src="./tiktok.png" alt="tiktok" />
+            </a>
+          </div>
+        </div>
+        <div class="mention">
+          <h3>Mention légale</h3>
+          <ul>
+            <li>Éditeur du site : Le Jardin Gourmand</li>
+            <li>Adresse : Yopougon, Abidjan, Côte d’Ivoire</li>
+            <li>Téléphone : +225 07 00 00 00 00</li>
+            <li>
+              <a href="mailto:yanngnaly05@gmail.com">
+                Nous contacter par email
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
